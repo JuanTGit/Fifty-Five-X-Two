@@ -1,6 +1,6 @@
 import random
 
-gp = 10_000_000
+gp = 500_000
 
 def fifty_five_x_two(gp):
     numerize = {
