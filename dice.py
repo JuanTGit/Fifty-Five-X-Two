@@ -14,19 +14,17 @@ def fifty_five_x_two(gp):
     while True:
         wager = input("Enter amount: ").lower()
         for i in wager[-1]:
-            total = int(wager[0:-1])
+            total = float(wager[0:-1])
             if i.isalpha() and i in numerize:
                 wager = total * numerize[i]
             else:
-                wager = int(wager)
+                wager = float(wager)
 
+        if gp == 0:
+            return f"You're current balance is: {gp}."
         if wager > gp:
             print(f"You don't have enough to cover that... Current balance: {gp:,} gp")
             continue
-        if gp >= goal_profit:
-            return f"Congratulations! You've reached the goal amount!"
-        if gp == 0:
-            return f"You're current balance is: {gp}."
         
         roll = random.randint(1, 100)
         if roll > 55:
@@ -38,6 +36,8 @@ def fifty_five_x_two(gp):
             gp -= wager
             total -= wager
         print(f"Current Balance: {gp:,} gp")
+        if gp >= goal_profit:
+            return f"Congratulations! You've reached the goal amount!"
         replay = input('Play again? (Y/N): ').lower()
         if replay == 'n':
             print('Thanks for playing!')
