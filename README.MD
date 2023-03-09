@@ -9,9 +9,9 @@ This code requires Python 3.x to be installed on your system.
 ## How to Run
 
 To run the game, simply execute the code in a Python environment. You can do this by opening a terminal or command prompt, navigating to the directory where the code is stored, and typing:
-
+```
 python fifty_five_x_two.py
-
+```
 When you run the code, you will be prompted to enter an amount to wager. The game will then simulate a roll of a die and determine if you win or lose. You can continue playing as many rounds as you like, and your current balance will be displayed after each round.
 
 ## Limitations
