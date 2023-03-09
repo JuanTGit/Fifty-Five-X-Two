@@ -1,6 +1,6 @@
 import random
 
-gp = 10_000_000
+gp = 500_000
 
 def fifty_five_x_two(gp):
     numerize = {
@@ -8,6 +8,8 @@ def fifty_five_x_two(gp):
         'm' : 1000000
     }
     total = 0
+    goal_profit = 10 * numerize['m']
+
     print(f"Coin Pouch: {gp:,}")
     while True:
         wager = input("Enter amount: ").lower()
@@ -21,6 +23,10 @@ def fifty_five_x_two(gp):
         if wager > gp:
             print(f"You don't have enough to cover that... Current balance: {gp:,} gp")
             continue
+        if gp >= goal_profit:
+            return f"Congratulations! You've reached the goal amount!"
+        if gp == 0:
+            return f"You're current balance is: {gp}."
         
         roll = random.randint(1, 100)
         if roll > 55:
